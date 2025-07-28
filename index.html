@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fideicomiso Alarcón - Inversión Inmobiliaria Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4c51bf;
+        }
+
+        .cta-header {
+            background: linear-gradient(45deg, #4c51bf, #667eea);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 81, 191, 0.4);
+        }
+
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(76, 81, 191, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .price-main {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .price-subtitle {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* Cards Section */
+        .cards-section {
+            background: white;
+            padding: 100px 0;
+            margin-top: -50px;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #2d3748;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .card p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Performance Table */
+        .performance-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 80px 0;
+        }
+
+        .performance-table {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+
+        .table-header {
+            background: linear-gradient(45deg, #4c51bf, #667eea);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .table-header h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .table-content {
+            padding: 40px;
+        }
+
+        .performance-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .performance-row:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            color: #4c51bf;
+            font-size: 1.1rem;
+        }
+
+        .year {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .amount {
+            font-weight: 600;
+            color: #38a169;
+            font-size: 1.1rem;
+        }
+
+        /* Key Benefits Summary */
+        .key-benefits-summary {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .summary-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .key-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .key-stat {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .key-stat:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .key-stat.total {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a202c;
+            border-color: #ffd700;
+            transform: scale(1.1);
+        }
+
+        .key-stat.total:hover {
+            transform: scale(1.15) translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .key-stat.total .stat-number {
+            color: #1a202c;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .key-stat.total .highlight {
+            color: #4a5568;
+        }
+
+        .plus-sign, .equals-sign {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .summary-text {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .summary-text p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ROI Section */
+        .roi-section {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .roi-section {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .roi-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .roi-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .roi-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Images Gallery */
+        .images-gallery {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        .image-overlay h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Location Section */
+        .location-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 100px 0;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .location-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .location-info p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .location-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .highlight-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .highlight-item span {
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+        }
+
+        /* Operator Section */
+        .operator-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 100px 0;
+        }
+
+        .operator-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .operator-intro {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 1.2rem;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .operator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .operator-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .operator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .operator-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .operator-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .operator-card p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .projects-showcase {
+            background: white;
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+        }
+
+        .projects-showcase h3 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #4c51bf;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            background: #f1f5f9;
+            transform: translateY(-3px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .project-header h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 0;
+        }
+
+        .status {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status.delivered {
+            background: #c6f6d5;
+            color: #2f855a;
+        }
+
+        .status.upcoming {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .project-card p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-stats span {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .innovation-highlight {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            border-radius: 25px;
+            padding: 50px;
+            color: white;
+            text-align: center;
+        }
+
+        .innovation-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .innovation-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .innovation-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: #edf2f7;
+            transform: translateX(5px);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            margin-right: 20px;
+            color: #4c51bf;
+        }
+
+        .benefit-text {
+            flex: 1;
+        }
+
+        .benefit-text h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2d3748;
+        }
+
+        .benefit-text p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #2d3748;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: #2d3748;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .price-main {
+                font-size: 2.5rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .key-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .key-stat {
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .key-stat.total {
+                transform: scale(1);
+            }
+            
+            .key-stat.total:hover {
+                transform: scale(1.05) translateY(-5px);
+            }
+            
+            .plus-sign, .equals-sign {
+                display: none;
+            }
+            
+            .summary-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card, .benefit-item, .roi-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .benefit-item:nth-child(2) { animation-delay: 0.1s; }
+        .benefit-item:nth-child(3) { animation-delay: 0.2s; }
+        .benefit-item:nth-child(4) { animation-delay: 0.3s; }
+        .benefit-item:nth-child(5) { animation-delay: 0.4s; }
+        .benefit-item:nth-child(6) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">🏡 Fideicomiso Alarcón</div>
+                <a href="https://wa.me/523324944005?text=Hola%2C%20me%20interesa%20el%20Fideicomiso%20Alarc%C3%B3n.%20%C2%BFPodr%C3%ADas%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="cta-header">Más Información</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Inversión Inmobiliaria Premium</h1>
+            <p>Participa en un pool de propiedades rentadas activamente vía Airbnb, Booking y renta local. Rentabilidad comprobada desde 2022.</p>
+            
+            <div class="price-highlight">
+                <div class="price-main">$740,000 MXN</div>
+                <div class="price-subtitle">Por debajo del valor proyectado 2026 ($884,000 MXN)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You're Buying -->
+    <section class="cards-section">
+        <div class="container">
+            <h2 class="section-title">¿Qué estás comprando?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🏠</div>
+                    <h3>Participación Directa</h3>
+                    <p>Una acción del Fideicomiso Alarcón que representa participación directa en un pool de propiedades operativas y rentables.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Renta Mensual Constante</h3>
+                    <p>Flujo de efectivo mensual promedio proyectado de $3,250 MXN para 2025, sin obligaciones de gestión.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Administración Profesional</h3>
+                    <p>Propiedades gestionadas profesionalmente con <strong>alta ocupación (más del 85%)</strong> a través de múltiples plataformas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance -->
+    <section class="performance-section">
+        <div class="container">
+            <h2 class="section-title">Rentabilidad Comprobada</h2>
+            <div class="performance-table">
+                <div class="table-header">
+                    <h3>Historial de Rentas desde Junio 2022</h3>
+                    <p>Rendimiento consistente y creciente año tras año</p>
+                </div>
+                <div class="table-content">
+                    <div class="performance-row">
+                        <span class="year">Jun – Dic 2022</span>
+                        <span class="amount">$14,599 MXN</span>
+                    </div>
+                    <div class="performance-row">
+                        <span class="year">Año 2023</span>
+                        <span class="amount">$30,070 MXN</span>
+                    </div>
+                    <div class="performance-row">
+                        <span class="year">Año 2024</span>
+                        <span class="amount">$39,683 MXN</span>
+                    </div>
+                    <div class="performance-row">
+                        <span class="year">Proyección 2025</span>
+                        <span class="amount">$39,000 MXN</span>
+                    </div>
+                    <div class="performance-row">
+                        <span class="year">Total Estimado</span>
+                        <span class="amount">$123,352 MXN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Summary -->
+    <section class="key-benefits-summary">
+        <div class="container">
+            <div class="summary-content">
+                <h2>Lo Más Importante</h2>
+                <div class="key-stats">
+                    <div class="key-stat">
+                        <div class="stat-number">5-6%</div>
+                        <div class="stat-label">Ganancia Neta en Rentas<br><span class="highlight">Sin preocupaciones</span></div>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="key-stat">
+                        <div class="stat-number">7-9%</div>
+                        <div class="stat-label">Plusvalía Anual<br><span class="highlight">Crecimiento del activo</span></div>
+                    </div>
+                    <div class="equals-sign">=</div>
+                    <div class="key-stat total">
+                        <div class="stat-number">12-15%</div>
+                        <div class="stat-label">Rendimiento Total Anual<br><span class="highlight">Flujo pasivo + valorización</span></div>
+                    </div>
+                </div>
+                <div class="summary-text">
+                    <p><strong>Inversión 100% pasiva:</strong> Recibes rentas mensuales sin gestión, mantenimiento, ni dolores de cabeza. Mientras tanto, tu inversión se revalúa automáticamente año tras año.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="roi-section">
+        <div class="container">
+            <h2 class="section-title">Retorno de Inversión</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 20px;">Rendimiento total desde junio 2022</p>
+            
+            <div class="roi-grid">
+                <div class="roi-card">
+                    <div class="roi-number">56%</div>
+                    <div class="roi-label">ROI Total<br>(3 años)</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-number">11.9%</div>
+                    <div class="roi-label">Rendimiento<br>Anualizado</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-number">$327K</div>
+                    <div class="roi-label">Retorno Total<br>Estimado</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-number">85%+</div>
+                    <div class="roi-label">Ocupación<br>Promedio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Images Gallery -->
+    <section class="images-gallery">
+        <div class="container">
+            <h2 class="section-title">Conoce Alarcón PerSe</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="alarcon1.png" alt="Alarcón PerSe - Vista Exterior" loading="lazy">
+                    <div class="image-overlay">
+                        <h3>Vista Exterior</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="alarcon2.png" alt="Alarcón PerSe - Amenidades" loading="lazy">
+                    <div class="image-overlay">
+                        <h3>Amenidades</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="alarcon3.png" alt="Alarcón PerSe - Interior" loading="lazy">
+                    <div class="image-overlay">
+                        <h3>Interiores</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="alarcon4.png" alt="Alarcón PerSe - Ubicación" loading="lazy">
+                    <div class="image-overlay">
+                        <h3>Ubicación</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <h2 class="section-title">Ubicación Privilegiada</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Mexicaltzingo y Juan Ruíz de Alarcón</h3>
+                    <p>Ubicado en una de las zonas más estratégicas de Guadalajara, a escasos metros del Corredor Chapultepec y con acceso directo a estación de Mi Bici.</p>
+                    <div class="location-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚴</div>
+                            <span>Junto a estación Mi Bici</span>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🏙️</div>
+                            <span>300m del Corredor Chapultepec</span>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🏪</div>
+                            <span>Zona comercial y gastronómica</span>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">✈️</div>
+                            <span>Excelente conectividad</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.0649392167645!2d-103.3762206!3d20.6683389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428afc5eab6f00d%3A0x50d0d411185232fb!2sAlarcon%20PerSe!5e0!3m2!1sen!2smx!4v1706123456789!5m2!1sen!2smx"
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 15px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operator Section -->
+    <section class="operator-section">
+        <div class="container">
+            <h2 class="section-title">Respaldado por Perse Capital</h2>
+            <div class="operator-content">
+                <div class="operator-intro">
+                    <p>El Fideicomiso Alarcón es operado por <strong>Perse Capital</strong>, líder en inversión inmobiliaria innovadora con sede en Guadalajara, especializada en proyectos de renta temporal y desarrollo residencial de alta plusvalía.</p>
+                </div>
+                
+                <div class="operator-grid">
+                    <div class="operator-card">
+                        <div class="operator-icon">🏢</div>
+                        <h3>Experiencia Comprobada</h3>
+                        <p>Equipo interdisciplinario con más de 45 años de experiencia en el sector inmobiliario, incluyendo arquitectos, constructores y expertos en marketing inmobiliario.</p>
+                    </div>
+                    <div class="operator-card">
+                        <div class="operator-icon">💰</div>
+                        <h3>Track Record Exitoso</h3>
+                        <p>Ha recaudado $131.2 millones MXN en 48 campañas a través de plataformas de crowdfunding, con <strong>100% de pagos a tiempo</strong> o adelantados.</p>
+                    </div>
+                    <div class="operator-card">
+                        <div class="operator-icon">🏗️</div>
+                        <h3>Portfolio Diversificado</h3>
+                        <p>Ha terminado y entregado múltiples edificios con plusvalías importantes en las mejores zonas de Guadalajara.</p>
+                    </div>
+                </div>
+
+                <div class="projects-showcase">
+                    <h3>Otros Proyectos Exitosos de Perse Capital</h3>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h4>Monraz PerSe</h4>
+                                <span class="status delivered">Entregado</span>
+                            </div>
+                            <p><strong>73% de plusvalía</strong> a la entrega. 12 residencias exclusivas en la mejor esquina de Colonia Monraz, frente al parque.</p>
+                            <div class="project-stats">
+                                <span>577 inversionistas</span>
+                                <span>$970,753 en retornos</span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h4>Garibaldi PerSe</h4>
+                                <span class="status delivered">Entregado</span>
+                            </div>
+                            <p>Proyecto mixto residencial y comercial a 40 metros de Torre Bansí, en la zona más plusvalizada de Guadalajara.</p>
+                            <div class="project-stats">
+                                <span>306 inversionistas</span>
+                                <span>$1,143,030 en retornos</span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h4>Asís PerSe</h4>
+                                <span class="status delivered">Entregado</span>
+                            </div>
+                            <p>Desarrollo residencial con altos estándares de diseño y construcción en ubicación estratégica.</p>
+                            <div class="project-stats">
+                                <span>214 inversionistas</span>
+                                <span>$751,308 en retornos</span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h4>Villaseñor PerSe</h4>
+                                <span class="status upcoming">Próximamente</span>
+                            </div>
+                            <p>Nuevo proyecto en desarrollo que continuará la tradición de innovación y rentabilidad de Perse Capital.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="innovation-highlight">
+                    <div class="innovation-content">
+                        <h3>Innovación en Rentas Temporales</h3>
+                        <p><strong>Alarcón PerSe es el primer desarrollo en el occidente del país</strong> diseñado específicamente como pool de rentas temporales, combinando la eficiencia de un hotel con la comodidad de un hogar.</p>
+                        <div class="innovation-features">
+                            <div class="feature">✓ Administración automatizada 24/7</div>
+                            <div class="feature">✓ Revenue Management basado en Big Data e IA</div>
+                            <div class="feature">✓ Gestión integral: limpieza, mantenimiento, inventarios</div>
+                            <div class="feature">✓ Ventas multicanal: Airbnb, Booking, Expedia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué invertir?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">💸</div>
+                    <div class="benefit-text">
+                        <h4>Flujo Pasivo Mensual</h4>
+                        <p>Recibe rentas mensuales directas sin gestión operativa</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏗️</div>
+                    <div class="benefit-text">
+                        <h4>Respaldado por Bienes Raíces</h4>
+                        <p>Inversión tangible en propiedades físicas operativas</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-text">
+                        <h4>Alta Ocupación</h4>
+                        <p>Más del 85% de ocupación promedio histórica</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-text">
+                        <h4>Inversión Líquida</h4>
+                        <p>Acción transferible y vendible cuando lo necesites</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚖️</div>
+                    <div class="benefit-text">
+                        <h4>Balance Perfecto</h4>
+                        <p>Excelente equilibrio entre seguridad y rendimiento</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <div class="benefit-text">
+                        <h4>Plusvalía Proyectada</h4>
+                        <p>Crecimiento del 7% anual estimado en valor del activo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contacto">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Te interesa esta oportunidad?</h2>
+                <p>Solicita información detallada y documentación completa del fideicomiso</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/523324944005?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20Fideicomiso%20Alarc%C3%B3n.%20%C2%BFPodr%C3%ADas%20enviarme%20m%C3%A1s%20informaci%C3%B3n%3F" class="cta-button" target="_blank">Solicitar Información</a>
+                </div>
+                <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px;">
+                    <h3 style="margin-bottom: 15px;">Información Disponible:</h3>
+                    <p>• Últimos reportes financieros<br>
+                    • Detalle mensual de rentas histórico<br>
+                    • Contrato completo del fideicomiso<br>
+                    • Proyecciones y análisis de mercado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fideicomiso Alarcón. Inversión inmobiliaria profesional.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.card, .roi-card, .benefit-item').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
